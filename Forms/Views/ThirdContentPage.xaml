@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XFdemo.ThirdContentPage" BackgroundColor="White" Title="Third page - Todo items">
+	<ContentPage.Content>
+		<StackLayout>
+
+			<ListView
+				RowHeight="50" 
+				ItemsSource="{Binding TodoItems}" 
+				SelectedItem="{Binding SelectedTodoItem}" 
+				IsPullToRefreshEnabled="true" 
+				IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}" 
+				RefreshCommand="{Binding RefreshCommand}">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<TextCell 
+						Text="{Binding Name}" 
+						Detail="{Binding Description}" />
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+
+			<Button
+				Text="Add item to list"
+				BackgroundColor="White"
+				TextColor="Blue"
+				Command="{Binding ButtonClickCommand}"/>
+
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

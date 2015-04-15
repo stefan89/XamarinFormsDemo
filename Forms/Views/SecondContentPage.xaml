@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XFdemo.SecondContentPage" Title="Second page" BackgroundColor="Green">
+	<ContentPage.Content>
+		<StackLayout>
+
+			<Label 
+				Text="Label to rotate"
+           		BindingContext="{x:Reference Name=sliderToSetRotationAngle}"
+           		Rotation="{Binding Path=Value}"
+           		TextColor="White"
+           		HorizontalOptions="Center"
+           		VerticalOptions="CenterAndExpand" />
+
+    		<Slider 
+    			x:Name="sliderToSetRotationAngle"
+           	 	Maximum="360"
+            	VerticalOptions="CenterAndExpand" />
+
+   	 		<Label 
+   	 	  		BindingContext="{x:Reference sliderToSetRotationAngle}"
+          		Text="{Binding Value, StringFormat='The angle is {0} degrees'}"
+           		TextColor="White"
+          		HorizontalOptions="Center"
+          		VerticalOptions="CenterAndExpand" />
+
+        	<Button
+				Text="Open third page"
+				BackgroundColor="White"
+				TextColor="Black"
+				Clicked="OnButtonClicked"/>
+
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
