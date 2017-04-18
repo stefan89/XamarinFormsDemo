@@ -12,7 +12,7 @@ namespace XFdemo
 
 			BackgroundColor = Color.Blue;
 
-			var labelMcc = new Label {
+			var labelClockwork = new Label {
 				VerticalOptions = LayoutOptions.FillAndExpand,
 				HorizontalOptions = LayoutOptions.FillAndExpand,
 				XAlign = TextAlignment.Center,
@@ -34,7 +34,7 @@ namespace XFdemo
 
 			Content = new StackLayout {
 				Children = {
-					labelMcc, buttonToNavigate
+                    labelClockwork, buttonToNavigate
 				}
 			};
 		}

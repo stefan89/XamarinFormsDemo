@@ -1,6 +1,13 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XFdemo.ThirdContentPage" BackgroundColor="White" Title="Third page - Todo items">
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="XFdemo.ThirdContentPage"
+	BackgroundColor="White"
+	Title="Third page - Todo items">
+
 	<ContentPage.Content>
+		
 		<StackLayout>
 
 			<ListView
@@ -10,13 +17,19 @@
 				IsPullToRefreshEnabled="true" 
 				IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}" 
 				RefreshCommand="{Binding RefreshCommand}">
+				
 				<ListView.ItemTemplate>
+					
 					<DataTemplate>
+						
 						<TextCell 
-						Text="{Binding Name}" 
-						Detail="{Binding Description}" />
+							Text="{Binding Name}" 
+							Detail="{Binding Description}" />
+						
 					</DataTemplate>
+					
 				</ListView.ItemTemplate>
+				
 			</ListView>
 
 			<Button
@@ -26,5 +39,7 @@
 				Command="{Binding ButtonClickCommand}"/>
 
 		</StackLayout>
+		
 	</ContentPage.Content>
+	
 </ContentPage>
